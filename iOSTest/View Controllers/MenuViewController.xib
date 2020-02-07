@@ -10,8 +10,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="iOSTest" customModuleProvider="target">
             <connections>
                 <outlet property="animationButton" destination="9uL-ib-Ayk" id="ldi-Bd-aNe"/>
+                <outlet property="animationView" destination="mqH-L0-UPd" id="yS4-Az-HzM"/>
                 <outlet property="chatButton" destination="4Fa-5D-jYS" id="WQf-Sy-Tse"/>
-                <outlet property="loginButton" destination="6JX-Lv-AOm" id="IBa-KL-U4C"/>
+                <outlet property="chatButtonView" destination="scf-M1-phW" id="Pi0-pq-1SC"/>
+                <outlet property="loginButton" destination="N0z-MQ-aMd" id="eDW-ih-3PS"/>
+                <outlet property="loginView" destination="cfZ-HB-aLb" id="5gI-HK-FJ1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,37 +29,71 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="GFV-4K-81u">
                     <rect key="frame" x="41.333333333333343" y="310.66666666666669" width="331.33333333333326" height="188"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fa-5D-jYS" userLabel="UIButton">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scf-M1-phW">
                             <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="50"/>
-                            <color key="backgroundColor" red="0.86286484771573613" green="0.86286484771573613" blue="0.86286484771573613" alpha="0.87590967465753422" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                            <state key="normal" title="Chat" image="ic_chat">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="didPressChatButton:" destination="-1" eventType="touchUpInside" id="vKS-9T-LMp"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JX-Lv-AOm" userLabel="UIButton">
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fa-5D-jYS" userLabel="UIButton">
+                                    <rect key="frame" x="24.666666666666657" y="0.0" width="282" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                    <state key="normal" title="     CHAT" image="ic_chat">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didPressChatButton:" destination="-1" eventType="touchUpInside" id="vKS-9T-LMp"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="0.88" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="4Fa-5D-jYS" firstAttribute="centerX" secondItem="scf-M1-phW" secondAttribute="centerX" id="EaZ-12-kau"/>
+                                <constraint firstItem="4Fa-5D-jYS" firstAttribute="centerY" secondItem="scf-M1-phW" secondAttribute="centerY" id="miM-T9-vrh"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqH-L0-UPd">
                             <rect key="frame" x="0.0" y="69" width="331.33333333333331" height="50"/>
-                            <color key="backgroundColor" red="0.86286484771573613" green="0.86286484771573613" blue="0.86286484771573613" alpha="0.87590967465753422" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" title="Login" image="ic_login">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="didPressLoginButton:" destination="-1" eventType="touchUpInside" id="vMe-dG-aNn"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uL-ib-Ayk" userLabel="UIButton">
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uL-ib-Ayk" userLabel="UIButton">
+                                    <rect key="frame" x="24.666666666666657" y="0.0" width="282" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="     Animation" image="ic_animation">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didPressAnimationButton:" destination="-1" eventType="touchUpInside" id="J6O-uG-LwS"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="0.88" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="9uL-ib-Ayk" firstAttribute="centerY" secondItem="mqH-L0-UPd" secondAttribute="centerY" id="Auv-XU-Fjg"/>
+                                <constraint firstItem="9uL-ib-Ayk" firstAttribute="width" secondItem="mqH-L0-UPd" secondAttribute="width" multiplier="0.851107" id="etc-LP-DSa"/>
+                                <constraint firstItem="9uL-ib-Ayk" firstAttribute="centerX" secondItem="mqH-L0-UPd" secondAttribute="centerX" id="jXu-Nb-kuo"/>
+                                <constraint firstItem="9uL-ib-Ayk" firstAttribute="height" secondItem="mqH-L0-UPd" secondAttribute="height" id="q9B-58-HYq"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfZ-HB-aLb">
                             <rect key="frame" x="0.0" y="138" width="331.33333333333331" height="50"/>
-                            <color key="backgroundColor" red="0.86286484771573613" green="0.86286484771573613" blue="0.86286484771573613" alpha="0.87590967465753422" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" title="Animation" image="ic_animation">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="didPressAnimationButton:" destination="-1" eventType="touchUpInside" id="J6O-uG-LwS"/>
-                            </connections>
-                        </button>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0z-MQ-aMd" userLabel="UIButton">
+                                    <rect key="frame" x="23.666666666666657" y="0.0" width="284" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="     Login" image="ic_login">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didPressLoginButton:" destination="-1" eventType="touchUpInside" id="8du-tB-K1O"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="0.88" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="N0z-MQ-aMd" firstAttribute="centerX" secondItem="cfZ-HB-aLb" secondAttribute="centerX" id="Mq5-62-4bT"/>
+                                <constraint firstItem="N0z-MQ-aMd" firstAttribute="width" secondItem="cfZ-HB-aLb" secondAttribute="width" multiplier="0.857143" id="RsF-qw-Dhu"/>
+                                <constraint firstItem="N0z-MQ-aMd" firstAttribute="height" secondItem="cfZ-HB-aLb" secondAttribute="height" id="jdb-sc-7zV"/>
+                                <constraint firstItem="N0z-MQ-aMd" firstAttribute="centerY" secondItem="cfZ-HB-aLb" secondAttribute="centerY" id="p0G-eh-Sim"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coding Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u56-Y2-aF6">
@@ -71,11 +108,13 @@
             <color key="tintColor" red="0.15904790831022469" green="0.38919771503833972" blue="0.71085818527918776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="zhk-NC-XkP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4EI-gF-ABM"/>
+                <constraint firstItem="4Fa-5D-jYS" firstAttribute="width" secondItem="zhk-NC-XkP" secondAttribute="width" multiplier="0.680611" id="6fY-CZ-Kuj"/>
                 <constraint firstItem="zhk-NC-XkP" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="GiD-qa-qe2"/>
                 <constraint firstItem="u56-Y2-aF6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LW8-ry-nXh"/>
                 <constraint firstItem="zhk-NC-XkP" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.866567" id="NyB-47-fTt"/>
                 <constraint firstAttribute="bottom" secondItem="zhk-NC-XkP" secondAttribute="bottom" id="QGa-Pq-BTa"/>
-                <constraint firstItem="4Fa-5D-jYS" firstAttribute="height" secondItem="zhk-NC-XkP" secondAttribute="height" multiplier="0.0784109" id="ZX6-Jc-sbT"/>
+                <constraint firstItem="scf-M1-phW" firstAttribute="height" secondItem="zhk-NC-XkP" secondAttribute="height" multiplier="0.0784109" id="SUU-sT-ygv"/>
+                <constraint firstItem="4Fa-5D-jYS" firstAttribute="height" secondItem="zhk-NC-XkP" secondAttribute="height" multiplier="0.0784109" id="Z8i-tL-vQD"/>
                 <constraint firstItem="zhk-NC-XkP" firstAttribute="top" secondItem="u56-Y2-aF6" secondAttribute="bottom" constant="8" id="doB-uT-4d8"/>
                 <constraint firstItem="GFV-4K-81u" firstAttribute="width" secondItem="zhk-NC-XkP" secondAttribute="width" multiplier="0.8" id="gGE-iE-gLQ"/>
                 <constraint firstItem="u56-Y2-aF6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0314843" id="l33-JR-mQQ"/>
@@ -83,7 +122,7 @@
                 <constraint firstItem="GFV-4K-81u" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.1" id="noF-6x-1Mb"/>
                 <constraint firstItem="u56-Y2-aF6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.402667" id="tSF-NH-NCZ"/>
             </constraints>
-            <point key="canvasLocation" x="551.20000000000005" y="312.59370314842579"/>
+            <point key="canvasLocation" x="550.72463768115949" y="312.22826086956525"/>
         </view>
     </objects>
     <resources>

@@ -17,36 +17,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_animation" translatesAutoresizingMaskIntoConstraints="NO" id="OqD-oY-CNC">
-                        <rect key="frame" x="5" y="5" width="73" height="64"/>
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_animation" translatesAutoresizingMaskIntoConstraints="NO" id="OqD-oY-CNC">
+                        <rect key="frame" x="5" y="5" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="OqD-oY-CNC" secondAttribute="height" multiplier="1:1" id="n0z-zL-lWo"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHn-U7-rWh">
-                        <rect key="frame" x="83" y="16" width="217" height="21"/>
+                        <rect key="frame" x="58" y="16" width="246" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4D-p6-QTk">
-                        <rect key="frame" x="83" y="45" width="217" height="38"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KpK-uq-QLv">
+                        <rect key="frame" x="58" y="45" width="246" height="54"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4D-p6-QTk">
+                                <rect key="frame" x="8" y="12" width="230" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="R4D-p6-QTk" firstAttribute="top" secondItem="KpK-uq-QLv" secondAttribute="top" constant="12" id="3Jm-Ig-rvj"/>
+                            <constraint firstAttribute="bottom" secondItem="R4D-p6-QTk" secondAttribute="bottom" constant="12" id="G4w-0Q-SUk"/>
+                            <constraint firstAttribute="trailing" secondItem="R4D-p6-QTk" secondAttribute="trailing" constant="8" id="k6d-vU-Lkx"/>
+                            <constraint firstItem="R4D-p6-QTk" firstAttribute="leading" secondItem="KpK-uq-QLv" secondAttribute="leading" constant="8" id="lQG-E6-WoS"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="R4D-p6-QTk" firstAttribute="top" secondItem="NHn-U7-rWh" secondAttribute="bottom" constant="8" id="01w-94-h4T"/>
                     <constraint firstItem="NHn-U7-rWh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="0YT-iQ-pxE"/>
-                    <constraint firstItem="R4D-p6-QTk" firstAttribute="trailing" secondItem="NHn-U7-rWh" secondAttribute="trailing" id="GtR-Ob-hsG"/>
                     <constraint firstItem="NHn-U7-rWh" firstAttribute="leading" secondItem="OqD-oY-CNC" secondAttribute="trailing" constant="5" id="Mlj-oU-Wgt"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="R4D-p6-QTk" secondAttribute="bottom" constant="8" id="QKf-aa-wst"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="NHn-U7-rWh" secondAttribute="trailing" constant="5" id="gJh-ag-33P"/>
-                    <constraint firstItem="OqD-oY-CNC" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.228125" id="iSw-TW-MF8"/>
+                    <constraint firstItem="NHn-U7-rWh" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.678125" constant="29" id="NAP-rd-9Ib"/>
+                    <constraint firstItem="KpK-uq-QLv" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="8" id="cGP-xf-PlC"/>
+                    <constraint firstItem="KpK-uq-QLv" firstAttribute="trailing" secondItem="NHn-U7-rWh" secondAttribute="trailing" id="gie-dG-fJ2"/>
+                    <constraint firstItem="OqD-oY-CNC" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.15" id="iSw-TW-MF8"/>
                     <constraint firstItem="OqD-oY-CNC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="n3F-cI-OZu"/>
                     <constraint firstItem="OqD-oY-CNC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="oyk-tA-2Mm"/>
-                    <constraint firstItem="R4D-p6-QTk" firstAttribute="centerX" secondItem="NHn-U7-rWh" secondAttribute="centerX" id="pze-Yd-AnG"/>
-                    <constraint firstItem="OqD-oY-CNC" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.627451" id="wAJ-Ya-5jm"/>
-                    <constraint firstItem="R4D-p6-QTk" firstAttribute="leading" secondItem="NHn-U7-rWh" secondAttribute="leading" id="zds-84-W2F"/>
+                    <constraint firstItem="KpK-uq-QLv" firstAttribute="leading" secondItem="NHn-U7-rWh" secondAttribute="leading" id="qFS-fG-sJf"/>
+                    <constraint firstItem="KpK-uq-QLv" firstAttribute="centerY" secondItem="NHn-U7-rWh" secondAttribute="centerY" constant="45.5" id="wAK-I1-LPg"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,6 +67,7 @@
             <connections>
                 <outlet property="avatarImage" destination="OqD-oY-CNC" id="y1N-xP-WI2"/>
                 <outlet property="body" destination="R4D-p6-QTk" id="LKm-6c-fqr"/>
+                <outlet property="bodyContainerView" destination="KpK-uq-QLv" id="mCe-b5-9QM"/>
                 <outlet property="header" destination="NHn-U7-rWh" id="gmc-dR-cCO"/>
             </connections>
             <point key="canvasLocation" x="89.599999999999994" y="56.671664167916049"/>

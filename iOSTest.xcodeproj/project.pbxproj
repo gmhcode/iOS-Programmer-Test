@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6900F5E121BF4726007AFBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6900F5E021BF4726007AFBB8 /* Assets.xcassets */; };
-		900FCE9923ECDD7400AAEC53 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FCE9823ECDD7400AAEC53 /* Message.swift */; };
+		900FCE9923ECDD7400AAEC53 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FCE9823ECDD7400AAEC53 /* MessageController.swift */; };
+		900FCEA223ED153500AAEC53 /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 900FCEA123ED153500AAEC53 /* videoplayback.mp4 */; };
 		F21312DA1E0481F80029E33F /* ChatClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F21312D71E0481F80029E33F /* ChatClient.m */; };
 		F21312E11E0485B50029E33F /* AnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21312DF1E0485B50029E33F /* AnimationViewController.xib */; };
 		F2603FCB202A404D001BCA22 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603FC9202A404D001BCA22 /* ChatTableViewCell.swift */; };
@@ -29,7 +30,8 @@
 
 /* Begin PBXFileReference section */
 		6900F5E021BF4726007AFBB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		900FCE9823ECDD7400AAEC53 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		900FCE9823ECDD7400AAEC53 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		900FCEA123ED153500AAEC53 /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
 		F21312D61E0481F80029E33F /* ChatClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatClient.h; path = Clients/ChatClient.h; sourceTree = "<group>"; };
 		F21312D71E0481F80029E33F /* ChatClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatClient.m; path = Clients/ChatClient.m; sourceTree = "<group>"; };
 		F21312DF1E0485B50029E33F /* AnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnimationViewController.xib; path = "View Controllers/AnimationViewController.xib"; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		900FCE9A23ED080D00AAEC53 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				900FCE9823ECDD7400AAEC53 /* MessageController.swift */,
+			);
+			name = ModelController;
+			sourceTree = "<group>";
+		};
 		F21312DC1E0485A50029E33F /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		F264BD901D7F4F0400275D46 = {
 			isa = PBXGroup;
 			children = (
+				900FCEA123ED153500AAEC53 /* videoplayback.mp4 */,
 				F264BD9B1D7F4F0400275D46 /* iOSTest */,
 				F264BD9A1D7F4F0400275D46 /* Products */,
 				F273B8321D95C3000069037F /* Frameworks */,
@@ -98,6 +109,7 @@
 				6900F5E021BF4726007AFBB8 /* Assets.xcassets */,
 				F2837BEE1D9AE99D00A57AC8 /* Clients */,
 				F273B63E1D95BD360069037F /* Models */,
+				900FCE9A23ED080D00AAEC53 /* ModelController */,
 				F273B62D1D95B1B70069037F /* Views */,
 				F264BDB81D7F503A00275D46 /* View Controllers */,
 				F264BD9C1D7F4F0400275D46 /* Supporting Files */,
@@ -151,7 +163,6 @@
 			children = (
 				F273B63F1D95BD500069037F /* Message.h */,
 				F273B6401D95BD500069037F /* Message.m */,
-				900FCE9823ECDD7400AAEC53 /* Message.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -231,7 +242,7 @@
 				TargetAttributes = {
 					F264BD981D7F4F0400275D46 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 44N2Z7D5P2;
+						DevelopmentTeam = 57FTCZV5HS;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -267,6 +278,7 @@
 				6900F5E121BF4726007AFBB8 /* Assets.xcassets in Resources */,
 				F21312E11E0485B50029E33F /* AnimationViewController.xib in Resources */,
 				F2603FCC202A404D001BCA22 /* ChatTableViewCell.xib in Resources */,
+				900FCEA223ED153500AAEC53 /* videoplayback.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +296,7 @@
 				F2603FD0202A4083001BCA22 /* ChatViewController.swift in Sources */,
 				F2603FCE202A407C001BCA22 /* AnimationViewController.swift in Sources */,
 				F21312DA1E0481F80029E33F /* ChatClient.m in Sources */,
-				900FCE9923ECDD7400AAEC53 /* Message.swift in Sources */,
+				900FCE9923ECDD7400AAEC53 /* MessageController.swift in Sources */,
 				F2603FCB202A404D001BCA22 /* ChatTableViewCell.swift in Sources */,
 				F264BD9E1D7F4F0400275D46 /* main.m in Sources */,
 			);
@@ -406,13 +418,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 44N2Z7D5P2;
+				DEVELOPMENT_TEAM = 57FTCZV5HS;
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOSTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hannDev.iOSTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.greghughes.iOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOSTest/iOSTest-Bridging-Header.h";
@@ -430,13 +442,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 44N2Z7D5P2;
+				DEVELOPMENT_TEAM = 57FTCZV5HS;
 				FRAMEWORK_SEARCH_PATHS = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iOSTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hannDev.iOSTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.greghughes.iOSTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOSTest/iOSTest-Bridging-Header.h";

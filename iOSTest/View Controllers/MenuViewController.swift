@@ -15,9 +15,9 @@ class MenuViewController: UIViewController {
      * INSTRUCTIONS
      * =========================================================================================
      *
-     * 1) UI must work on iOS phones of multiple sizes. Do not worry about iPads.
+     * 1 1) UI must work on iOS phones of multiple sizes. Do not worry about iPads.
      *
-     * 2) Use Autolayout to make sure all UI works for each resolution
+     * 1 2) Use Autolayout to make sure all UI works for each resolution
      *
      * 3) Use this starter project as a base and build upon it. It is ok to remove some of the
      *    provided code if necessary. It is ok to add any classes. This is your project now!
@@ -32,16 +32,19 @@ class MenuViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var chatButtonView: UIView!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var animationButton: UIButton!
+    @IBOutlet weak var animationView: UIView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chatButton.layer.cornerRadius = 5
-        loginButton.layer.cornerRadius = 5
-        animationButton.layer.cornerRadius = 5
+        chatButtonView.layer.cornerRadius = 5
+        loginView.layer.cornerRadius = 5
+        animationView.layer.cornerRadius = 5
         
         title = "Coding Tasks"
     }
