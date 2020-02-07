@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
+            <connections>
+                <outlet property="emailTextField" destination="xoa-Sh-ZA6" id="D08-Hg-6sg"/>
+                <outlet property="passwordTextField" destination="9Yh-GL-2qX" id="eN1-uT-5e2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_login" translatesAutoresizingMaskIntoConstraints="NO" id="Ecd-h6-Rre">
+                    <rect key="frame" x="0.0" y="91" width="375" height="576"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lu5-GL-dZR">
+                    <rect key="frame" x="0.0" y="50" width="45" height="33"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="chevron.left" catalog="system"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="FRr-a8-96M"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1g-xi-52l">
+                    <rect key="frame" x="104" y="56" width="167" height="21"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="4q6-9P-lGo">
+                    <rect key="frame" x="37.5" y="137.5" width="300" height="192"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xoa-Sh-ZA6" userLabel="UITextField">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                            <color key="backgroundColor" white="0.85570954623287676" alpha="0.58866652397260277" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Yh-GL-2qX" userLabel="UITextField">
+                            <rect key="frame" x="0.0" y="71" width="300" height="50"/>
+                            <color key="backgroundColor" white="0.85570954623287676" alpha="0.58866652397260277" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNN-sf-pf9">
+                            <rect key="frame" x="0.0" y="142" width="300" height="50"/>
+                            <color key="backgroundColor" red="0.1137254902" green="0.36078431370000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="gk4-N9-la7"/>
+                            </constraints>
+                            <state key="normal" title="Login">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="didPressLoginButton:" destination="-1" eventType="touchUpInside" id="Rjq-ek-LWJ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.11372549019607843" green="0.36078431372549019" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Lu5-GL-dZR" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0494753" id="CXs-pW-MkV"/>
+                <constraint firstItem="Ecd-h6-Rre" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.872564" constant="-6" id="Fqy-VW-e2E"/>
+                <constraint firstItem="c1g-xi-52l" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0314843" id="JNL-6w-c37"/>
+                <constraint firstItem="4q6-9P-lGo" firstAttribute="width" secondItem="Ecd-h6-Rre" secondAttribute="width" multiplier="0.8" id="L6X-SD-WM9"/>
+                <constraint firstItem="4q6-9P-lGo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Lul-lM-5hj"/>
+                <constraint firstItem="Ecd-h6-Rre" firstAttribute="top" secondItem="Lu5-GL-dZR" secondAttribute="bottom" constant="8" id="P98-LR-nFa"/>
+                <constraint firstItem="Lu5-GL-dZR" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.12" id="XP0-GY-ATK"/>
+                <constraint firstAttribute="bottom" secondItem="Ecd-h6-Rre" secondAttribute="bottom" id="bEJ-D9-m12"/>
+                <constraint firstItem="Lu5-GL-dZR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cc4-FQ-7zd"/>
+                <constraint firstItem="Ecd-h6-Rre" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="dpi-aJ-oSQ"/>
+                <constraint firstItem="Ecd-h6-Rre" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gof-yq-dSc"/>
+                <constraint firstItem="c1g-xi-52l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="idc-Ks-1k4"/>
+                <constraint firstItem="Ecd-h6-Rre" firstAttribute="top" secondItem="c1g-xi-52l" secondAttribute="bottom" constant="14" id="ixE-A6-WLq"/>
+                <constraint firstItem="4q6-9P-lGo" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.7" id="qSe-Ez-mQz"/>
+                <constraint firstItem="c1g-xi-52l" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.445333" id="yFI-q5-2qV"/>
+            </constraints>
+            <point key="canvasLocation" x="551.20000000000005" y="312.59370314842579"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="img_login" width="376" height="667"/>
+    </resources>
+</document>

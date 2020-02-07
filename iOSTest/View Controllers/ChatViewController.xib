@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController">
+            <connections>
+                <outlet property="chatTable" destination="tOq-9z-JVj" id="0PV-ve-Tck"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tOq-9z-JVj">
+                    <rect key="frame" x="0.0" y="119" width="414" height="777"/>
+                    <color key="backgroundColor" red="0.93437548965858974" green="0.94362673213045689" blue="0.94362673213045689" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZB-m9-c27">
+                    <rect key="frame" x="0.0" y="66.5" width="49.5" height="44.5"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="chevron.left" catalog="system"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="67p-YN-8dx"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mze-zG-m8B">
+                    <rect key="frame" x="123" y="76.5" width="168" height="28.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.18261805179999999" green="0.40303033589999998" blue="0.58926361800000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Mze-zG-m8B" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.405333" id="2ZN-XB-yUn"/>
+                <constraint firstItem="tOq-9z-JVj" firstAttribute="top" secondItem="Mze-zG-m8B" secondAttribute="bottom" constant="14" id="2kx-Yo-BFO"/>
+                <constraint firstItem="tOq-9z-JVj" firstAttribute="top" secondItem="eZB-m9-c27" secondAttribute="bottom" constant="8" id="BR2-oW-qSb"/>
+                <constraint firstItem="eZB-m9-c27" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DbC-ft-aQX"/>
+                <constraint firstAttribute="bottom" secondItem="tOq-9z-JVj" secondAttribute="bottom" id="Iyz-cJ-a7W"/>
+                <constraint firstItem="eZB-m9-c27" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0494753" id="UV3-AL-ZCC"/>
+                <constraint firstItem="tOq-9z-JVj" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.878561" constant="-10" id="bOw-5j-gH5"/>
+                <constraint firstItem="tOq-9z-JVj" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="be2-j3-41s"/>
+                <constraint firstItem="Mze-zG-m8B" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0314843" id="d7u-dP-gEq"/>
+                <constraint firstItem="tOq-9z-JVj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="f9R-6f-8WD"/>
+                <constraint firstItem="eZB-m9-c27" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.12" id="fcZ-Gr-m4O"/>
+                <constraint firstItem="Mze-zG-m8B" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p4T-SG-QGs"/>
+            </constraints>
+            <point key="canvasLocation" x="100" y="54.422788605697157"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
+    </resources>
+</document>
