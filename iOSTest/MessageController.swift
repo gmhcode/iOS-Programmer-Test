@@ -13,9 +13,10 @@ import UIKit
 class MessageController {
     
     var messages : [Message] = []
+    static let imageCache = NSCache<NSString, UIImage>()
     
     static func fetchImage(message: Message, completion: @escaping (UIImage?) -> Void) {
-         
+        
         
         URLSession.shared.dataTask(with: message.avatarURL) { (data, reponse, error) in
             if let error = error {
@@ -25,43 +26,50 @@ class MessageController {
             }
             
             guard let data = data else {print("❇️♊️>>>\(#file) \(#line): guard let failed<<<"); completion(nil);return}
-
-                
+            
+            
             let image = UIImage(data: data)
+            
+            MessageController.imageCache.setObject(image ?? UIImage(), forKey: message.userID as NSString)
+            
+            
             completion(image)
             
         }.resume()
     }
+    ///VV ATTENTION ALL THE STUFF BELOW HERE IS THE SWIFT VERSION OF THE OBJECTIVE C CODE
     
-//    static func fetchChat(completion: @escaping ([Message]?) -> Void) {
-//
-//        guard let baseUrl = URL(string:"https://api.jsonbin.io/b/5d769a01b6d0e614dd190aff/1") else {print("❇️♊️>>>\(#file) \(#line): guard let failed<<<"); return}
-//
-//
-//        URLSession.shared.dataTask(with: baseUrl) { (data, response, error) in
-//            if let error = error {
-//                print("❌ There was an error in \(#function) \(error) : \(error.localizedDescription) : \(#file) \(#line)")
-//                completion(nil)
-//                return
-//            }
-//
-//            guard let data = data else {print("❇️♊️>>>\(#file) \(#line): guard let failed<<<");completion(nil); return}
-//
-//            let jsonDecoder = JSONDecoder()
-//
-//            do {
-//
-//                let topLevelDict = try jsonDecoder.decode(TopLevelDictionary.self, from: data)
-//                let messages = topLevelDict.data
-//                print(messages)
-//                completion(messages)
-//            }catch {
-//                print("❌ There was an error in \(#function) \(error) : \(error.localizedDescription)")
-//            }
-//
-//
-//        }.resume()
-//    }
+    
+    
+    //    static func fetchChat(completion: @escaping ([Message]?) -> Void) {
+    //
+    //        guard let baseUrl = URL(string:"https://api.jsonbin.io/b/5d769a01b6d0e614dd190aff/1") else {print("❇️♊️>>>\(#file) \(#line): guard let failed<<<"); return}
+    //
+    //
+    //        URLSession.shared.dataTask(with: baseUrl) { (data, response, error) in
+    //            if let error = error {
+    //                print("❌ There was an error in \(#function) \(error) : \(error.localizedDescription) : \(#file) \(#line)")
+    //                completion(nil)
+    //                return
+    //            }
+    //
+    //            guard let data = data else {print("❇️♊️>>>\(#file) \(#line): guard let failed<<<");completion(nil); return}
+    //
+    //            let jsonDecoder = JSONDecoder()
+    //
+    //            do {
+    //
+    //                let topLevelDict = try jsonDecoder.decode(TopLevelDictionary.self, from: data)
+    //                let messages = topLevelDict.data
+    //                print(messages)
+    //                completion(messages)
+    //            }catch {
+    //                print("❌ There was an error in \(#function) \(error) : \(error.localizedDescription)")
+    //            }
+    //
+    //
+    //        }.resume()
+    //    }
 }
 
 //struct TopLevelDictionary : Codable {

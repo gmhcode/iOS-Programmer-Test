@@ -10,6 +10,8 @@
 		6900F5E121BF4726007AFBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6900F5E021BF4726007AFBB8 /* Assets.xcassets */; };
 		900FCE9923ECDD7400AAEC53 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FCE9823ECDD7400AAEC53 /* MessageController.swift */; };
 		900FCEA223ED153500AAEC53 /* videoplayback.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 900FCEA123ED153500AAEC53 /* videoplayback.mp4 */; };
+		90DED0CE23EF314200D68D86 /* PlayerViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DED0CD23EF314200D68D86 /* PlayerViewClass.swift */; };
+		90DED0D123EF394800D68D86 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DED0D023EF394800D68D86 /* UIViewExtensions.swift */; };
 		F21312DA1E0481F80029E33F /* ChatClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F21312D71E0481F80029E33F /* ChatClient.m */; };
 		F21312E11E0485B50029E33F /* AnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21312DF1E0485B50029E33F /* AnimationViewController.xib */; };
 		F2603FCB202A404D001BCA22 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603FC9202A404D001BCA22 /* ChatTableViewCell.swift */; };
@@ -32,6 +34,8 @@
 		6900F5E021BF4726007AFBB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		900FCE9823ECDD7400AAEC53 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		900FCEA123ED153500AAEC53 /* videoplayback.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = videoplayback.mp4; sourceTree = "<group>"; };
+		90DED0CD23EF314200D68D86 /* PlayerViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewClass.swift; sourceTree = "<group>"; };
+		90DED0D023EF394800D68D86 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		F21312D61E0481F80029E33F /* ChatClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatClient.h; path = Clients/ChatClient.h; sourceTree = "<group>"; };
 		F21312D71E0481F80029E33F /* ChatClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatClient.m; path = Clients/ChatClient.m; sourceTree = "<group>"; };
 		F21312DF1E0485B50029E33F /* AnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnimationViewController.xib; path = "View Controllers/AnimationViewController.xib"; sourceTree = "<group>"; };
@@ -74,6 +78,14 @@
 				900FCE9823ECDD7400AAEC53 /* MessageController.swift */,
 			);
 			name = ModelController;
+			sourceTree = "<group>";
+		};
+		90DED0CF23EF393A00D68D86 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				90DED0D023EF394800D68D86 /* UIViewExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		F21312DC1E0485A50029E33F /* Animation */ = {
@@ -144,6 +156,7 @@
 		F273B62D1D95B1B70069037F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				90DED0CF23EF393A00D68D86 /* Extensions */,
 				F273B62E1D95B1BE0069037F /* Cells */,
 			);
 			name = Views;
@@ -163,6 +176,7 @@
 			children = (
 				F273B63F1D95BD500069037F /* Message.h */,
 				F273B6401D95BD500069037F /* Message.m */,
+				90DED0CD23EF314200D68D86 /* PlayerViewClass.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -293,11 +307,13 @@
 				F2603FD4202A4092001BCA22 /* MenuViewController.swift in Sources */,
 				F264BDA11D7F4F0400275D46 /* AppDelegate.m in Sources */,
 				F273B6411D95BD500069037F /* Message.m in Sources */,
+				90DED0CE23EF314200D68D86 /* PlayerViewClass.swift in Sources */,
 				F2603FD0202A4083001BCA22 /* ChatViewController.swift in Sources */,
 				F2603FCE202A407C001BCA22 /* AnimationViewController.swift in Sources */,
 				F21312DA1E0481F80029E33F /* ChatClient.m in Sources */,
 				900FCE9923ECDD7400AAEC53 /* MessageController.swift in Sources */,
 				F2603FCB202A404D001BCA22 /* ChatTableViewCell.swift in Sources */,
+				90DED0D123EF394800D68D86 /* UIViewExtensions.swift in Sources */,
 				F264BD9E1D7F4F0400275D46 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

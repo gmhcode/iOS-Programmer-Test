@@ -20,15 +20,18 @@
  * =========================================================================================
  * 1) Make a request to fetch chat data used in this app.
  *
- *ATTENTION!!!!!!!!!!!!!!!!!!!!
- *vv this conflicts with a previous instruction, so I used the other instructions endpoint instead. But it should work with both endpoints
+ *
  *
  * 2) Using the following endpoint, make a request to fetch data
  *    URL: https:api.jsonbin.io/b/5d769a01b6d0e614dd190aff/3
  **/
+
+
+///ATTENTION!!!!!!!!!!!!!!!!!!!!
+///*vv this conflicts with a previous instruction, so I used the other instructions endpoint instead. But it should work with both endpoints
 + (NSURL *)baseUrl
 {
-   return [NSURL URLWithString:@"https://api.jsonbin.io/b/5d769a01b6d0e614dd190aff/1"];
+   return [NSURL URLWithString:@"https:api.jsonbin.io/b/5d769a01b6d0e614dd190aff/3"];
 }
 
 

@@ -37,7 +37,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         messages = [Message]()
         configureTable(tableView: chatTable)
         
-        title = "Chat"
 
         ChatClient.fetchChatData({ (messages) in
             guard let messages = messages else {print("❇️♊️>>>\(#file) \(#line): guard let failed<<<"); return}

@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -35,7 +36,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Login"
     }
     
     // MARK: - Actions
@@ -47,20 +47,23 @@ class LoginViewController: UIViewController {
     
     @IBAction func didPressLoginButton(_ sender: Any) {
         
+        loginButton.pulsate()
         let isValidEm = isValidEmail(emailTextField.text ?? "")
         let isValidPW = isValidPassword(passwordTextField.text ?? "")
         
         if isValidEm == true && isValidPW == true {
             print("true")
-        }else if isValidPW {
+            successfulAlert()
+        }else{
             print("false")
+            unSuccessfulAlert()
         }
     }
     
     
     
     
-    
+    /// Checks if the email is valid.
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
@@ -68,7 +71,7 @@ class LoginViewController: UIViewController {
         return emailPred.evaluate(with: email)
     }
     
-    //requirements for password is at least 1 uppercase, 1 lowercase, 1 non letter, at least 5 characters long and no spaces
+    /// requirements for password is at least 1 uppercase, 1 lowercase, 1 non letter, at least 5 characters long and no spaces
     func isValidPassword(_ pw: String) -> Bool {
         
         dismissKeyboards()
@@ -78,18 +81,19 @@ class LoginViewController: UIViewController {
             && pw.contains(where: {$0.isLetter == false})
             && pw.count >= 5
             && !pw.contains(where: {$0 == " "}){
-                successfulAlert()
+                
                 return true
         }
         return false
     }
     
+    /// This dismisses the keyboards...
     func dismissKeyboards() {
         
         if passwordTextField.isFirstResponder == true {
             passwordTextField.resignFirstResponder()
         }
-        if emailTextField.isFirstResponder == true {
+        else if emailTextField.isFirstResponder == true {
             emailTextField.resignFirstResponder()
         }
         
@@ -106,4 +110,15 @@ class LoginViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
         
     }
+    
+    func unSuccessfulAlert() {
+           
+           let alertController = UIAlertController(title: "Invalid", message: "Make sure your email and password are valid", preferredStyle: .alert)
+           
+           alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (ok) in
+             
+           }))
+           present(alertController, animated: true, completion: nil)
+           
+       }
 }

@@ -10,9 +10,10 @@ import UIKit
 import AVKit
 class AnimationViewController: UIViewController {
     
+    @IBOutlet weak var movingView: UIView!
     @IBOutlet weak var hannDev: UITextField!
     @IBOutlet weak var fadeButton: UIButton!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: PlayerViewClass!
     
     var player : AVPlayer?
     var playerLayer : AVPlayerLayer?
@@ -34,7 +35,6 @@ class AnimationViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Animation"
         
         hannDev.alpha = 0
         fadeButton.setTitle("Fade In", for: .normal)
@@ -44,9 +44,7 @@ class AnimationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
-        self.playerLayer?.position = containerView.center
-//        self.playerLayer?.
+        self.playerLayer?.position = self.view.center
     }
     // MARK: - Actions
     @IBAction func backAction(_ sender: Any) {
@@ -56,7 +54,7 @@ class AnimationViewController: UIViewController {
     
     /// This handles the movement of the UITextField
     @IBAction func handlePan(_ sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: hannDev)
+        let translation = sender.translation(in: movingView)
         guard let gestureView = sender.view else {print("❇️♊️>>>\(#file) \(#line): guard let failed<<<"); return}
         
         
@@ -72,38 +70,57 @@ class AnimationViewController: UIViewController {
     }
     /// Handles the Fade
     @IBAction func didPressFade(_ sender: Any) {
-        
+        fadeButton.pulsate()
         if hannDev.alpha == 0 {
             UIView.animate(withDuration: 1) {
+                
                 self.fadeButton.setTitle("Fade Out", for: .normal)
-                self.hannDev.alpha = 1
+                self.containerView.alpha = 1
                 self.playerLayer?.isHidden = false
-                self.player?.play()
+                self.containerView.player?.play()
+                
+                UIView.animate(withDuration: 1, delay: 5, options: .allowAnimatedContent, animations: {
+                    self.hannDev.alpha = 1
+                }, completion: nil)
+                
                 
             }
         }else {
             UIView.animate(withDuration: 1) {
                 self.fadeButton.setTitle("Fade In", for: .normal)
                 self.hannDev.alpha = 0
+                self.containerView.alpha = 0
                 self.playerLayer?.isHidden = true
-                self.player?.pause()
+                self.containerView.player?.pause()
                 
             }
         }
     }
     
+    @IBAction func dismissKeyboardTapped(_ sender: Any) {
+        dismissKeyboards()
+    }
+    
     func playVideo() {
         if let path = Bundle.main.path(forResource: "videoplayback", ofType: "mp4") {
             
-            self.player = AVPlayer(url: URL(fileURLWithPath: path))
-            self.playerLayer = AVPlayerLayer(player: player)
-            self.containerView.layer.addSublayer(playerLayer ?? AVPlayerLayer())
-            self.playerLayer?.frame.size.height = self.containerView.bounds.height * 1.5
-            self.playerLayer?.frame.size.width = self.containerView.bounds.width * 1.5
+            // Allows sound when phone is in silent mode
+            do {
+               try AVAudioSession.sharedInstance().setCategory(.playback)
+            } catch(let error) {
+                print(error.localizedDescription)
+            }
             
-            
-            
-            self.playerLayer?.isHidden = true
+            let avPlayer = AVPlayer(url: URL(fileURLWithPath: path))
+            containerView.playerLayer.player = avPlayer
+            containerView.playerLayer.contentsGravity = .resizeAspect
+            containerView.alpha = 0
         }
     }
+    
+    func dismissKeyboards() {
+           if hannDev.isFirstResponder == true {
+               hannDev.resignFirstResponder()
+           }
+       }
 }

@@ -31,24 +31,26 @@ class ChatTableViewCell: UITableViewCell {
         bodyContainerView.layer.cornerRadius = 10
         bodyContainerView.layer.borderWidth = 1
         bodyContainerView.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9058823529, blue: 0.9058823529, alpha: 0.88)
-//        body.layer.cornerRadius = 10
     }
     
     // MARK: - Public
     func setCellData(message: Message) {
         
-       
-        
         self.header.text = message.username
         self.body.text = message.text
-        body.drawText(in: body.frame)
         
-        
-        MessageController.fetchImage(message: message) { (image) in
+        if let cachedImage = MessageController.imageCache.object(forKey: message.userID as NSString) {
             DispatchQueue.main.async {
-                
-                self.avatarImage.image = image
+                self.avatarImage.image = cachedImage
                 self.avatarImage.layer.cornerRadius = self.avatarImage.frame.height / 2
+            }
+         //I have this vv just in case the original image fetch didnt work for whatever reason
+        } else {
+            MessageController.fetchImage(message: message) { (image) in
+                DispatchQueue.main.async {
+                    self.avatarImage.image = image
+                    self.avatarImage.layer.cornerRadius = self.avatarImage.frame.height / 2
+                }
             }
         }
     }

@@ -46,23 +46,42 @@ class MenuViewController: UIViewController {
         loginView.layer.cornerRadius = 5
         animationView.layer.cornerRadius = 5
         
-        title = "Coding Tasks"
+        
+        // initial load of messages and images, I used this to cache them before we get to the chat file so there is no delay
+        ChatClient.fetchChatData({ (messages) in
+            guard let messages = messages else {print("❇️♊️>>>\(#file) \(#line): guard let failed<<<"); return}
+
+            for message in messages {
+                MessageController.fetchImage(message: message) { (image) in
+                    
+                }
+            }
+        }) { (error) in
+            if let error = error {
+                print("❌ There was an error in \(#function) \(error) : \(error.description) : \(#file) \(#line)")
+                return
+            }
+        }
     }
     
     // MARK: - Actions
     @IBAction func didPressChatButton(_ sender: Any) {
         
         let chatViewController = ChatViewController()
+        chatButtonView.pulsate()
         navigationController?.pushViewController(chatViewController, animated: true)
     }
     
     @IBAction func didPressLoginButton(_ sender: Any) {
         let loginViewController = LoginViewController()
+        loginView.pulsate()
         navigationController?.pushViewController(loginViewController, animated: true)
     }
     
     @IBAction func didPressAnimationButton(_ sender: Any) {
         let animationViewController = AnimationViewController()
+        animationView.pulsate()
         navigationController?.pushViewController(animationViewController, animated: true)
     }
 }
+
